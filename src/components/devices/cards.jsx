@@ -1,15 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Circle = ({ index }) => {
-  return (
-    <div style={{ display: 'grid', gap: '0.5rem' }}>
-      <div style={{ borderRadius: '50%', width: '2rem', height: '2rem', background: '#f0f0f0', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>{index} </div>
-      <div style={{ fontSize: '0.7rem', display: 'flex', justifyContent: 'center' }}>desc</div>
-    </div>
-  );
-};
+import Circle from './circles';
 
-const Cards = ({ imageUrl, name, price }) => {
+const Cards = ({ imageUrl, name, price,addToCart }) => {
   const circles = Array.from({ length: 4 }, (_, index) => <Circle key={index} index={index} />);
 
   return (
@@ -29,7 +23,7 @@ const Cards = ({ imageUrl, name, price }) => {
           <div style={{ margin: '0', fontSize: '1rem' }}>get the device for&nbsp;<div style={{ margin: '0', fontSize: '2rem' }}>Rs. {price}</div></div>
         </div>
         {/* select button  */}
-        <button style={{ backgroundColor: '#c14e4e', border: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', width: '5rem', height: '2rem' }}>SELECT</button>
+        <Link to = '/add-to-cart' style={{textDecoration:'none'}}><button onClick={() => addToCart(price)} style={{ backgroundColor: '#c14e4e', border: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', width: '5rem', height: '2rem' ,cursor:'pointer', }}>SELECT</button></Link>
       </div>
     </div>
   );
