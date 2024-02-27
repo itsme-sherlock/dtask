@@ -23,7 +23,7 @@ const Cards = ({ imageUrl, name, price,addToCart }) => {
           <div style={{ margin: '0', fontSize: '1rem' }}>get the device for&nbsp;<div style={{ margin: '0', fontSize: '2rem' }}>Rs. {price}</div></div>
         </div>
         {/* select button  */}
-        <Link to = '/add-to-cart' style={{textDecoration:'none'}}><button onClick={() => addToCart(price)} style={{ backgroundColor: '#c14e4e', border: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', width: '5rem', height: '2rem' ,cursor:'pointer', }}>SELECT</button></Link>
+        <Link to = '/add-to-cart' ><button onClick={() => addToCart(price)} style={{ backgroundColor: '#c14e4e', border: 'none', display: 'flex', justifyContent: 'center', alignItems: 'center', color: 'white', width: '5rem', height: '2rem' ,cursor:'pointer', }}>SELECT</button></Link>
       </div>
     </div>
   );

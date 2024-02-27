@@ -1,7 +1,7 @@
 import React from "react";
 import Cards from "./cards";
 
-const Devices = ({addToCart}) => {
+const Devices = ({getPrice}) => {
   const device = [
     {
       imageUrl:"https://telecomtalk.info/wp-content/uploads/2021/08/airtel-xstream-box-upgrade-cost-options-features.jpg.webp",
@@ -16,16 +16,17 @@ const Devices = ({addToCart}) => {
     },
     
     
+    
   ]
   return (
     <div style={{ background: "#f0f0f0", display: "flex", marginTop: "10rem" }}>
-     {device.map((device)=>(
+     {device.map((element)=>(
          <Cards
-         key={device.name}
-         imageUrl={device.imageUrl}
-         name={device.name}
-         price={device.price}
-         addToCart={addToCart} // Pass addToCart function as a prop
+         key={element.name}
+         imageUrl={element.imageUrl}
+         name={element.name}
+         price={element.price}
+         addToCart={getPrice} // Pass addToCart function as a prop
        />
      ))}
 

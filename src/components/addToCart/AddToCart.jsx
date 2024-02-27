@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
 const AddToCart = ({ price }) => {
+    console.log("price" + price);
   const [quantity, setQuantity] = useState(1);
 
   const handleIncrement = () => {
